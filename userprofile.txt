@@ -1,0 +1,88 @@
+    :local ambo [/system script get [find name=ambotoday] source];
+    :local charmelle [/system script get [find name=charmelletoday] source];
+    :local denver [/system script get [find name=denvertoday] source];
+    :local karen [/system script get [find name=karentoday] source];
+    :local lawrence [/system script get [find name=lawrencetoday] source];
+    :local naty [/system script get [find name=natytoday] source];
+    :local ronnel [/system script get [find name=ronneltoday] source];
+    :local rowena [/system script get [find name=rowenatoday] source];
+    :local sdnhs [/system script get [find name=sdnhstoday] source];
+    :local sdnhs2 [/system script get [find name=sdnhstoday2] source];
+    :local ssg [/system script get [find name=ssgtoday] source];
+    :local todaytotal ($ambo + $charmelle + $karen + $denver + $lawrence + $ronnel + $rowena + $naty + $sdnhs + $sdnhs2  + $ssg);
+
+
+   
+ :local ambox [/system script get [find name=ambotoday] source];
+   :local ambo1 (ambox * 70);
+    :local ambo2 (ambo1 / 100);
+    :local charmellex [/system script get [find name=charmelletoday] source];
+   :local charmelle1 (charmellex * 60);
+    :local charmelle2 (charmelle1 / 100);
+    :local karenx [/system script get [find name=karentoday] source];
+ :local karen1 (karenx * 70);
+  :local karen2 (karen1 / 100);
+    :local nattyx [/system script get [find name=natytoday] source];
+ :local natty1 (nattyx * 70);
+   :local natty2 (natty1 / 100);
+    :local ronnelx [/system script get [find name=ronneltoday] source];
+   :local ronnel1 (ronnelx * 70);
+    :local ronnel2 (ronnel1 / 100);
+    :local rowenax [/system script get [find name=rowenatoday] source];
+    :local rowena1 (rowenax * 70);
+  :local rowena2 (rowena1 / 100);
+   :local bemx [:put ([/system script get [find name=denvertoday] source])];
+   :local bem1 (bemx * 70);
+  :local bem2 (bem1 / 100);
+:local lawrencex [/system script get [find name=lawrencetoday] source];
+ :local lawrence1 (lawrencex * 70);
+ :local lawrence2 (lawrence1 / 100);
+	:local sdnhsx [/system script get [find name=sdnhstoday] source];
+  :local sdnhs1 (sdnhsx * 60);
+ :local sdnhs22 (sdnhs1 / 100);
+	:local sdnhsy [/system script get [find name=sdnhstoday2] source];
+  :local sdnhs3 (sdnhsy * 60);
+ :local sdnhs4 (sdnhs3 / 100);
+:local ssgx [/system script get [find name=ssgtoday] source];
+ :local ssg1 (ssgx * 60);
+    :local ssg2 (ssg1 / 100);
+  :local total2 ($ambo2 + $charmelle2 + $karen2+ $sdnhs22 + $sdnhs4 + $ssg2 + $bem2 + $lawrence2 + $ronnel2 + $rowena2 + $natty2); 
+
+
+   :local amboy [/system script get [find name=ambotoday] source];
+    :local ambo3 (amboy * 30);
+    :local ambo4 (ambo3 / 100);
+    :local charmelley [/system script get [find name=charmelletoday] source];
+    :local charmelle3 (charmelley * 40);
+    :local charmelle4 (charmelle3 / 100);
+    :local kareny [/system script get [find name=karentoday] source];
+    :local karen3 (kareny * 30);
+    :local karen4 (karen3 / 100);
+    :local nattyy [/system script get [find name=natytoday] source];
+    :local natty3 (nattyy * 30);
+    :local natty4 (natty3 / 100);
+    :local ronnely [/system script get [find name=ronneltoday] source];
+    :local ronnel3 (ronnely * 30);
+    :local ronnel4 (ronnel3 / 100);
+    :local rowenay [/system script get [find name=rowenatoday] source];
+    :local rowena3 (rowenay * 30);
+    :local rowena4 (rowena3 / 100);
+    :local bemy [:put ([/system script get [find name=denvertoday] source])];
+    :local bem3 (bemy * 30);
+    :local bem4 (bem3 / 100);
+    :local lawrencey [/system script get [find name=lawrencetoday] source];
+    :local lawrence3 (lawrencey * 30);
+    :local lawrence4 (lawrence3 / 100);
+	:local sdnhs2y [/system script get [find name=sdnhstoday] source];
+    :local sdnhs23 (sdnhs2y * 40);
+    :local sdnhs24 (sdnhs23 / 100);
+:local sdnhsv2y [/system script get [find name=sdnhstoday2] source];
+    :local sdnhsv33 (sdnhsv2y * 40);
+    :local sdnhsv34 (sdnhsv33 / 100);
+	:local ssgy [/system script get [find name=ssgtoday] source];
+    :local ssg3 (ssgy * 40);
+    :local ssg4 (ssg3 / 100);
+    :local totaly ($ambo4 + $charmelle4 + $sdnhs24 + $sdnhs34 + $ssg4 + $karen4 + $bem4 + $lawrence4 + $ronnel4 + $rowena4 + $natty4); 
+
+:log info "send MonthlySales"
+/tool fetch url="https://api.telegram.org/bot5395683194:AAEPMHiDvgZjt9v10Fn_fJCQIOi_3niieao/sendMessage?chat_id=-4013480473&text=Today Total Sales! %0A %0AAmbo Sales: $ambo %0ACharmelle Sales: $charmelle %0AKaren Sales: $karen %0ALawrence Sales: $lawrence %0AMarissa Sales: $denver %0ANatty Sales: $naty %0ARonnel Sales: $ronnel %0ARowena Sales: $rowena %0ASDNHS Sales: $sdnhs %0ASDNHS2 Sales: $sdnhs2 %0ASSG Sales: $ssg %0A %0AToday Totalsales: $todaytotal %0ABranch TodayTotal Percentage: $totaly %0AJomar TodayTotal Percentage: $total2 %0A"
